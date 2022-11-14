@@ -8,21 +8,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>home">Home</a>
-                </li> 
+                </li>  -->
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>products">Our Products</a>
+                    <a class="nav-link" href="<?= base_url(); ?>products">Products</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>purchase">Purchase</a>
                 </li> -->
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>about">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>contact">Contact Us</a>
-                </li>
+                </li> -->
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>about">About Us</a>
                 </li>
@@ -35,47 +35,50 @@
             <a class="navbar-brand" href="<?= base_url(); ?>auth"><i class="fa fa-user float-right"></i></a>   
             </nav>
 
-<div class="container">
-    <h3><i class="fas fa-edit">Detail Data Barang</i></h3>
+<div class="mt-3 container">
+    <h3><i class="fa fa-edit"> Detail Data Barang</i></h3>
 
 
-        <form action="<?php echo base_url().'admin/data_barang/update/'; ?>" method="post">
+    <?php foreach($barang as $brg) : ?>
+        <form action="<?php echo base_url().'admin/data_barang/update/'; ?>" method="post" enctype="multipart/form-data">
         
             <div class="form-group mt-3">
                 <label>Nama Barang</label>
-                <input type="hidden" name="id_brg" class="form-control"
-                value="<?= $barang['id_brg']; ?>">
                 <input type="text" name="nama_brg" class="form-control"
-                value="<?= $barang['nama_brg']; ?>">
+                value="<?php echo $brg->nama_brg ?>">
             </div>
 
             <div class="form-group">
                 <label>Keterangan</label>
-                <input type="hidden" name="id_brg" class="form-control"
-                value="<?= $barang['id_brg']; ?>">
                 <input type="text" name="keterangan" class="form-control"
-                value="<?= $barang['keterangan']; ?>">
+                value="<?php echo $brg->keterangan ?>">
             </div>
 
             <div class="form-group">
                 <label>Harga</label>
-                <input type="hidden" name="id_brg" class="form-control"
-                value="<?= $barang['id_brg']; ?>">
                 <input type="text" name="harga" class="form-control"
-                value="<?= $barang['harga']; ?>">
+                value="<?php echo $brg->harga ?>">
+            </div>
+           
+            <div class="form-group">
+                <label>Stok</label>
+                <input type="text" name="stok" class="form-control"
+                value="<?php echo $brg->stok ?>">
             </div>
 
             <div class="form-group">
-                <label>Stok</label>
-                <input type="hidden" name="id_brg" class="form-control"
-                value="<?= $barang['id_brg']; ?>">
-                <input type="text" name="stok" class="form-control"
-                value="<?= $barang['stok']; ?>">
+                <label>Gambar Produk</label>
+                <div class="row">
+            <div class="col-md-4">
+            <img src="<?php echo base_url().'/uploads/'.$brg->gambar ?>" width="300">
+            </div>
+            </div>  
             </div>
 
-            <a href="<?= base_url(); ?>shop/detail_products"  class="btn btn-danger">Kembali</a>
+            <a href="<?= base_url(); ?>products"  class="btn btn-danger">Kembali</a>
 
         </form>
+        <?php endforeach; ?>
 
 </div>
 

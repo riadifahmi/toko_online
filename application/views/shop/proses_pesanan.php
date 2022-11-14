@@ -1,7 +1,5 @@
-
-
-        <!-- Header -->
-        <header class="">
+       <!-- Header -->
+       <header class="">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
             <a class="navbar-brand" href="#"><h2>Sixteen <em>Clothing</em></h2></a>
@@ -10,14 +8,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>admin/dashboard">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>admin/data_barang">Data Barang</a>
-                </li> 
+                </li> -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?= base_url(); ?>admin/invoices">Invoices</a>
+                    <a class="nav-link" href="<?= base_url(); ?>products/pembayaran">Proses Pesanan</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url(); ?>products">Products</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>about">About Us</a>
@@ -28,24 +26,15 @@
                 </ul>               
             </div>
             </div> 
-            </div>    
             <a class="navbar-brand" href="<?= base_url(); ?>auth"><i class="fa fa-user float-right"></i></a>   
-        </nav>
-        </header>
+            
+            </nav>
 
 
-        
-        <footer>
-        <div class="container">
-            <div class="row">
-            <div class="col-md-12">
-                <div class="inner-content">
-                <p>Copyright &copy; 2020 Sixteen Clothing Co., Ltd.
-                
-                - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
-                </div>
-            </div>
-            </div>
-        </div>
-        </footer>
-
+<div class="container-fluid">
+    <div class="alert alert-success">
+        <p class="text-center align-middle">
+            Selamat, Pesanan Anda Telah Berhasil Diproses!!!
+        </p>
+    </div>
+</div>

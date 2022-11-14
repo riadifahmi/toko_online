@@ -1,6 +1,6 @@
 <?php
 //config
-$config['base_url'] = 'http://localhost/ci-app/peoples/index';
+$config['base_url'] = 'http://localhost/ci-app/admin/data_barang';
 //$config['num_links'] = 5;
 
 //styling

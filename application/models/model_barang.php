@@ -1,16 +1,24 @@
 <?php
 
+use LDAP\Result;
+
 class Model_barang extends CI_Model{
     public function tampil_data() 
     {
         return $this->db->get('tb_barang')->result_array();
+
+    }
+
+    public function fetch_image()
+    {
+        return $this->db->get('tb_barang')->result();
     }
 
     public function tambah_barang($data,$table){
         $this->db->insert($table,$data);
     }
 
-    public function edit_barang($id){
+    public function edit_barang($id,$data){
         return $this->db->get_where('tb_barang', ['id_brg' => $id])->row_array();
     }
 
@@ -47,8 +55,32 @@ class Model_barang extends CI_Model{
         }
     }
 
-    public function detail_barang($id)
+    // public function detail_barang($id)
+    // {
+    //     return $this->db->get_where('tb_barang', ['id_brg' => $id])->row_array();
+    // }
+
+
+    public function detail_brg($id_brg)
     {
-        return $this->db->get_where('tb_barang', ['id_brg' => $id])->row_array();
+        $result = $this->db->where('id_brg',$id_brg)->get('tb_barang');
+        if($result->num_rows() > 0){
+            return $result->result();
+        }else {
+            return false;
+        }
     }
+
+        public function getBarang($limit, $start)
+        {
+            return $this->db->get('tb_barang', $limit, $start)->result_array();
+        }
+
+        public function countAllBarang()
+        {
+            return $this->db->get('tb_barang')->num_rows();
+        }
+
+
+
 }

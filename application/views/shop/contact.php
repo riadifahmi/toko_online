@@ -16,14 +16,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>products">Our Products</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>purchase">Purchase</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>about">About Us</a>
                 </li>
                 <li class="nav-item  active">
                     <a class="nav-link" href="<?= base_url(); ?>contact">Contact Us</a>
+                </li>
+                <li class="nav-link float-right text-primary mt-1">
+                    <?php $keranjang = 'Cart: ' . $this->cart->total_items() . ' items' ?>
+                    <?php echo $keranjang ?>
                 </li>
                 </ul>               
             </div>

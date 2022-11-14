@@ -17,7 +17,7 @@
                     <a class="nav-link" href="<?= base_url(); ?>admin/data_barang">Data Barang</a>
                 </li> 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>admin/invoices">Invoices</a>
+                    <a class="nav-link" href="<?= base_url(); ?>admin/invoice">Invoice</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>about">About Us</a>
@@ -62,6 +62,7 @@
             <?php endif; ?>
                 <tr>
                     <th>No</th>
+                    <th>Gambar Produk</th>
                     <th>Nama Barang</th>
                     <th>Keterangan</th>
                     <th>Harga</th>
@@ -75,11 +76,11 @@
 
                 <tr>
                     <td><?= $no++ ?></td>
+                    <td><img src="<?php echo base_url() . '/uploads/' . $brg['gambar'] ?>" alt="" width="100"></td>
                     <td><?= $brg['nama_brg']; ?></td>
                     <td><?= $brg['keterangan']; ?></td>
                     <td><?= $brg['harga']; ?></td>
                     <td><?= $brg['stok']; ?></td>
-                    
                     <td>
                         <a href="<?= base_url(); ?>admin/data_barang/detail/<?= $brg['id_brg']; ?>" class="badge badge-warning"><u>Detail</u></a>
                     </td>
@@ -95,6 +96,7 @@
                 <?php endforeach; ?>
 
             </table>
+            <!-- <?php echo $this->pagination->create_links(); ?> -->
             <footer>
                 <div class="inner-content">
                 <p>Copyright &copy; 2020 Sixteen Clothing Co., Ltd.              

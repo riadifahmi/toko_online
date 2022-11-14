@@ -29,11 +29,11 @@
             <a class="navbar-brand" href="<?= base_url(); ?>auth"><i class="fa fa-user float-right"></i></a>   
             </nav>
 
-<div class="container">
+<div class="mt-3 container">
     <h3><i class="fas fa-edit">Edit Data Barang</i></h3>
 
     
-        <form action="<?php echo base_url().'admin/data_barang/update/'; ?>" method="post">
+        <form action="<?php echo base_url().'admin/data_barang/update/'; ?>" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id_brg" value="<?= $barang['id_brg']; ?>">
         
             <div class="form-group mt-3">
@@ -61,6 +61,11 @@
                 <label>Stok</label>
                 <input type="text" name="stok" class="form-control"
                 value="<?= $barang['stok']; ?>">
+            </div>
+
+            <div class="form-group">
+                <label">Gambar Produk</label><br>
+                <input type="file" id="ga" name="ga" class="form-control image_file" accept=".jpg,.png,.jpeg,.gif" />
             </div>
             
             <button type="submit" class="btn btn-primary btn-sm mt-3">Simpan</button>

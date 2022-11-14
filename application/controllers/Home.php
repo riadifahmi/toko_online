@@ -27,10 +27,9 @@ class Home extends CI_Controller {
 		redirect('home');
 	}
 
-	public function detail($id)
+    public function detail($id)
     {
-		$this->load->model('model_barang');
-        $data['barang'] = $this->model_barang->detail_barang($id);
+        $data['barang'] = $this->model_barang->detail_home($id);
         $this->load->view('shop/templates/header');
         $this->load->view('shop/detail_home', $data);
         $this->load->view('shop/templates/footer');

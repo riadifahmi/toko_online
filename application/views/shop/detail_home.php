@@ -9,19 +9,13 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>home">Home</a>
+                    <a class="nav-link" href="<?= base_url(); ?>admin/dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?= base_url(); ?>admin/data_barang">Data Barang</a>
                 </li> 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>products">Our Products</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>purchase">Purchase</a>
-                </li> -->
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>about">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>contact">Contact Us</a>
+                    <a class="nav-link" href="<?= base_url(); ?>admin/invoices">Invoices</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>about">About Us</a>
@@ -73,7 +67,7 @@
                 value="<?= $barang['stok']; ?>">
             </div>
 
-            <a href="<?= base_url(); ?>shop/detail_home"  class="btn btn-danger">Kembali</a>
+            <a href="<?= base_url(); ?>shop/home"  class="btn btn-danger">Kembali</a>
 
         </form>
 

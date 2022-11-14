@@ -26,6 +26,30 @@
         <link rel="stylesheet" href="<?= base_url('assets/img/css/templatemo-sixteen.css');?>">
         <link rel="stylesheet" href="<?= base_url('assets/img/css/owl.css');?>">
 
+        <link rel="icon" type="image/png" href="<?php echo $path; ?>/favicon.png">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script>
+        $(document).ready(function(){
+            $("#provinsi").change(function (){
+                var url = "<?php echo site_url('wilayah/add_ajax_kab');?>/"+$(this).val();
+                $('#kabupaten').load(url);
+                return false;
+            })
+   
+   $("#kabupaten").change(function (){
+                var url = "<?php echo site_url('wilayah/add_ajax_kec');?>/"+$(this).val();
+                $('#kecamatan').load(url);
+                return false;
+            })
+   
+   $("#kecamatan").change(function (){
+                var url = "<?php echo site_url('wilayah/add_ajax_des');?>/"+$(this).val();
+                $('#desa').load(url);
+                return false;
+            })
+        });
+    </script>
+
     </head>
 
     <body>
